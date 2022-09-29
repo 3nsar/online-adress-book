@@ -1,0 +1,24 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: black;
+  color: rgba(203, 15, 255, 0.635);
+}
+.person-container{
+  border: 1px solid red;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.person-content{
+  border: 1px solid blue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
