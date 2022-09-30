@@ -1,24 +1,47 @@
 import React from 'react'
+import { Col, Container,Row, Table } from 'react-bootstrap'
 import data from './data'
+
 
 const Person = () => {
   return (
-    <div className='person-container'>
-        {data.map((item)=>(
-            <div className='person-content'>
-                <h3>First-name: {item.first_name}</h3>
-                <h3>Last-name: {item.last_name}</h3>
-                <h3>Email: {item.email}</h3>
-            </div> 
-        ))}
-        {/*<div className='person-container'>
-          <div className='person-content'>
-            <h2><span className='line'>FirstName:</span> Ulrikaumeko</h2>
-            <h2><span className='line'>FirstName:</span> Leao</h2>
-            <h2><span className='line'>Email:</span> leao_ulrikaumeko@u.io</h2>
-          </div>
-        </div>*/}
-    </div>
+    <>
+      <Container className='mt-3'>
+        <Row>
+          <Col>
+            <h3 className='text-primary'>User List</h3>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Table striped bordered hover variant="dark">
+            <thead>
+        <tr>
+          <th>#</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          {data.map((item)=>(
+           <tr key={item.id}>
+          <td>{item.id}</td> 
+          <td>{item.first_name}</td>
+          <td>{item.last_name}</td>
+          <td>{item.email}</td>
+          </tr>
+         ))}
+        
+      </tbody>
+
+            </Table>
+          </Col>
+        </Row>
+      </Container>
+        
+    </>
   )
 }
 
