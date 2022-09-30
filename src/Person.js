@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Col, Container,Form,InputGroup,Row, Table } from 'react-bootstrap'
 import data from './data'
 
 
 const Person = () => {
+  const [search, setSearch] = useState("")
+
+
+
   return (
     <>
       <Container className='mt-3'>
@@ -11,7 +15,7 @@ const Person = () => {
           <Col>
             <h1 className='text-center text-primary'>Online Adress Book</h1>
             <InputGroup className='mb-3'>
-              <Form.Control  
+              <Form.Control  onChange={(e) => setSearch(e.target.value)}
               placeholder="Search"
               aria-label="Search"
               aria-describedby="basic-addon2"/>
@@ -31,7 +35,9 @@ const Person = () => {
       </thead>
       <tbody>
         
-          {data.map((item)=>(
+          {data.filter((item)=>{
+            return search.toLowerCase() === "" ? item : item.first_name.toLowerCase().includes(search)
+          }).map((item)=>(
            <tr key={item.id}>
           <td>{item.id}</td> 
           <td>{item.first_name}</td>
