@@ -6,14 +6,12 @@ import data from './data'
 const Person = () => {
   const [search, setSearch] = useState("")
 
-
-
   return (
     <>
       <Container className='mt-3'>
         <Row>
           <Col>
-            <h1 className='text-center text-primary'>Online Adress Book</h1>
+            <h1 className='text-center text-info'>Online Adress Book</h1>
             <InputGroup className='mb-3'>
               <Form.Control  onChange={(e) => setSearch(e.target.value)}
               placeholder="Search"
@@ -35,7 +33,7 @@ const Person = () => {
       </thead>
       <tbody>
         
-          {data.filter((item)=>{
+          {/*{data.filter((item)=>{
             return search.toLowerCase() === "" ? item : item.first_name.toLowerCase().includes(search)
           }).map((item)=>(
            <tr key={item.id}>
@@ -44,7 +42,17 @@ const Person = () => {
           <td>{item.last_name}</td>
           <td>{item.email}</td>
           </tr>
-         ))}
+          ))} */}
+          {data.filter((item =>{
+            return search.toLowerCase() === "" ? item : item.first_name.toLowerCase().includes(search)
+          })).map((item) =>(
+            <tr key={item.id}>
+              <td>{item.id}</td>
+              <td>{item.first_name}</td>
+              <td>{item.last_name}</td>
+              <td>{item.email}</td>
+            </tr>
+          ))}
         
       </tbody>
 

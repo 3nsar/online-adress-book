@@ -1,2 +1,5 @@
 # Online-Adress-Book
- find some person
+ I created this webpage with React JS and Bootstrap. 
+To make the searchbar work, I used the filter function. 
+
+
