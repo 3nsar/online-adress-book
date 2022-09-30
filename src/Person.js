@@ -9,18 +9,18 @@ const Person = () => {
       <Container className='mt-3'>
         <Row>
           <Col>
-            <h1 className='text-center text-primary'>User List</h1>
+            <h1 className='text-center text-primary'>Online Adress Book</h1>
             <InputGroup className='mb-3'>
               <Form.Control  
-              placeholder="Recipient's username"
-              aria-label="Recipient's username"
+              placeholder="Search"
+              aria-label="Search"
               aria-describedby="basic-addon2"/>
             </InputGroup>
           </Col>
         </Row>
         <Row>
           <Col>
-            <Table striped bordered hover variant="dark">
+            <Table striped bordered hover>
             <thead>
         <tr>
           <th>#</th>
