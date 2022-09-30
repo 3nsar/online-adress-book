@@ -33,7 +33,7 @@ const Person = () => {
       </thead>
       <tbody>
         
-          {/*{data.filter((item)=>{
+          {data.filter((item)=>{
             return search.toLowerCase() === "" ? item : item.first_name.toLowerCase().includes(search)
           }).map((item)=>(
            <tr key={item.id}>
@@ -42,17 +42,7 @@ const Person = () => {
           <td>{item.last_name}</td>
           <td>{item.email}</td>
           </tr>
-          ))} */}
-          {data.filter((item =>{
-            return search.toLowerCase() === "" ? item : item.first_name.toLowerCase().includes(search)
-          })).map((item) =>(
-            <tr key={item.id}>
-              <td>{item.id}</td>
-              <td>{item.first_name}</td>
-              <td>{item.last_name}</td>
-              <td>{item.email}</td>
-            </tr>
-          ))}
+          ))} 
         
       </tbody>
 
