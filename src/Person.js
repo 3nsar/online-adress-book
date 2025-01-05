@@ -4,6 +4,7 @@ import data from './data'
 
 
 const Person = () => {
+  
   const [search, setSearch] = useState("")
 
   return (
@@ -13,8 +14,7 @@ const Person = () => {
           <Col>
             <h1 className='text-center text-info'>Online Adress Book</h1>
             <InputGroup className='mb-3'>
-              <Form.Control  onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search"
+              <Form.Control onChange={(e) => setSearch(e.target.value)} 
               aria-label="Search"
               aria-describedby="basic-addon2"/>
             </InputGroup>
@@ -33,17 +33,16 @@ const Person = () => {
       </thead>
       <tbody>
         
-          {data.filter((item)=>{
-            return search.toLowerCase() === "" ? item : item.first_name.toLowerCase().includes(search)
-          }).map((item)=>(
-           <tr key={item.id}>
-          <td>{item.id}</td> 
-          <td>{item.first_name}</td>
-          <td>{item.last_name}</td>
-          <td>{item.email}</td>
+        {data.filter((item)=>{
+          return search.toLocaleLowerCase() === "" ? item : item.first_name.toLowerCase().includes(search)
+        }).map((item)=>(
+          <tr key={item.id}>
+              <td>{item.first_name}</td>
+              <td>{item.last_name}</td>
+              <td>{item.email}</td>
           </tr>
-          ))} 
-        
+        ))}
+
       </tbody>
 
             </Table>
